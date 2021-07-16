@@ -4,9 +4,6 @@
         // Connection
         private $conn;
 
-        // Table
-        private $db_table = "bookingdata";
-
         // columns
         public $website_id;
         public $vname;
@@ -35,17 +32,6 @@
 
             $stmt->execute();
             return $stmt;
-
-            //$dataRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            //echo json_encode($dataRows);
-            
-            //echo json_encode($dataRows);
-           /* 
-            $this->vname = $dataRows['vname'];
-            $this->wname = $dataRows['wname'];
-            $this->name = $dataRows['name'];
-            $this->visibility = $dataRows['visibility'];
-            $this->price = $dataRows['price'];*/
         }
         
          
@@ -63,96 +49,6 @@
             $stmt->execute();
             return $stmt;
         }
-        /*
-        /*
-
-        
-
-        // CREATE
-        public function createEmployee(){
-            $sqlQuery = "INSERT INTO
-                        ". $this->db_table ."
-                    SET
-                        name = :name, 
-                        email = :email, 
-                        age = :age, 
-                        designation = :designation, 
-                        created = :created";
-        
-            $stmt = $this->conn->prepare($sqlQuery);
-        
-            // sanitize
-            $this->name=htmlspecialchars(strip_tags($this->name));
-            $this->email=htmlspecialchars(strip_tags($this->email));
-            $this->age=htmlspecialchars(strip_tags($this->age));
-            $this->designation=htmlspecialchars(strip_tags($this->designation));
-            $this->created=htmlspecialchars(strip_tags($this->created));
-        
-            // bind data
-            $stmt->bindParam(":name", $this->name);
-            $stmt->bindParam(":email", $this->email);
-            $stmt->bindParam(":age", $this->age);
-            $stmt->bindParam(":designation", $this->designation);
-            $stmt->bindParam(":created", $this->created);
-        
-            if($stmt->execute()){
-               return true;
-            }
-            return false;
-        }
-
-
-        // UPDATE
-        public function updateEmployee(){
-            $sqlQuery = "UPDATE
-                        ". $this->db_table ."
-                    SET
-                        name = :name, 
-                        email = :email, 
-                        age = :age, 
-                        designation = :designation, 
-                        created = :created
-                    WHERE 
-                        id = :id";
-        
-            $stmt = $this->conn->prepare($sqlQuery);
-        
-            $this->name=htmlspecialchars(strip_tags($this->name));
-            $this->email=htmlspecialchars(strip_tags($this->email));
-            $this->age=htmlspecialchars(strip_tags($this->age));
-            $this->designation=htmlspecialchars(strip_tags($this->designation));
-            $this->created=htmlspecialchars(strip_tags($this->created));
-            $this->id=htmlspecialchars(strip_tags($this->id));
-        
-            // bind data
-            $stmt->bindParam(":name", $this->name);
-            $stmt->bindParam(":email", $this->email);
-            $stmt->bindParam(":age", $this->age);
-            $stmt->bindParam(":designation", $this->designation);
-            $stmt->bindParam(":created", $this->created);
-            $stmt->bindParam(":id", $this->id);
-        
-            if($stmt->execute()){
-               return true;
-            }
-            return false;
-        }
-
-        // DELETE
-        function deleteEmployee(){
-            $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE id = ?";
-            $stmt = $this->conn->prepare($sqlQuery);
-        
-            $this->id=htmlspecialchars(strip_tags($this->id));
-        
-            $stmt->bindParam(1, $this->id);
-        
-            if($stmt->execute()){
-                return true;
-            }
-            return false;
-        }
-        */
-
+       
     }
 ?>
